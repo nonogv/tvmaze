@@ -1,0 +1,39 @@
+<h4>{{ genre | titlecase }}</h4>
+<swiper-container
+  navigation="false"
+  space-between="0"
+  free-mode="true"
+  mousewheel="false"
+  [breakpoints]="{
+    '0': {
+      slidesPerView: 1.2,
+    },
+    '275': {
+      slidesPerView: 2.2,
+    },
+    '450': {
+      slidesPerView: 3.2,
+    },
+    '639': {
+      slidesPerView: 3.2,
+    },
+    '748': {
+      slidesPerView: 4.2,
+    },
+    '1000': {
+      slidesPerView: 5.2,
+    },
+    '1300': {
+      slidesPerView: 6.2,
+    },
+    '1500': {
+      slidesPerView: 7.2,
+    },
+  }"
+>
+  @for (show of shows; track show.id) {
+    <swiper-slide>
+      <app-show-item [show]="show.show"></app-show-item>
+    </swiper-slide>
+  }
+</swiper-container>

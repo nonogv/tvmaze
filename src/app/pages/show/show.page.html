@@ -1,0 +1,26 @@
+<ion-content>
+    @if (show$ | async; as show) {
+    <div class="container">
+      <img [src]="show.image?.original || 'https://static.tvmaze.com/images/no-img/no-img-portrait-text.png'" />
+      <div class="info">
+        <h3>
+          {{ show.name }}
+        </h3>
+        <h5>
+          <span>{{ show.schedule.time }}</span>
+          <span *ngIf="show.network"> - {{ show.network.name }}</span>
+        </h5>
+      </div>
+    </div>
+    <div class="content">
+      <p [innerHTML]="show.summary"></p>
+      <ion-button target="_blank" [href]="show.officialSite">
+        Official site
+      </ion-button>
+    </div>
+    <ion-badge>{{ show.rating.average }}</ion-badge>
+  }
+  @else {
+    No data found for this ID
+  }
+</ion-content>

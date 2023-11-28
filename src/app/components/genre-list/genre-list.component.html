@@ -1,0 +1,3 @@
+@for (genre of showsByGenre$ | async | keyvalue; track genre.key) {
+  <app-genre-row [genre]="genre.key" [shows]="genre.value"></app-genre-row>
+}

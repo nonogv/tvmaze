@@ -1,0 +1,9 @@
+<ion-card [routerLink]="['/show', show.id]">
+  <img [src]="show.image?.medium || 'https://static.tvmaze.com/images/no-img/no-img-portrait-text.png'" />
+  <ion-card-content>
+    <div class="info">
+      <span>{{ show.schedule.time }}</span>
+      <span *ngIf="show.network"> - {{ show.network.name }}</span></div>
+  </ion-card-content>
+</ion-card>
+<ion-badge>{{ show.rating.average }}</ion-badge>

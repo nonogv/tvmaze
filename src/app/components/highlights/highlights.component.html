@@ -1,0 +1,21 @@
+<swiper-container
+  pagination="true"
+  autoplay-delay="3500"
+  autoplay-disable-on-interaction="false"
+>
+  @for (scheduled of highlights$ | async; track scheduled.id) {
+    <swiper-slide [routerLink]="['/show', scheduled.show.id]">
+      <img [src]="scheduled.show.image?.original || 'https://static.tvmaze.com/images/no-img/no-img-portrait-text.png'" />
+      <div class="info">
+        <h3>
+          {{ scheduled.name }} - {{ scheduled.show.name }}
+        </h3>
+        <h5>
+          <span>{{ scheduled.show.schedule.time }}</span>
+          <span *ngIf="scheduled.show.network"> - {{ scheduled.show.network.name }}</span>
+        </h5>
+      </div>
+      <ion-badge>{{ scheduled.show.rating.average }}</ion-badge>
+    </swiper-slide>
+  }
+</swiper-container>

@@ -1,0 +1,41 @@
+@import "src/theme/mixins.scss";
+
+swiper-container {
+  width: 100%;
+  display: block;
+}
+
+swiper-slide {
+  display: flex;
+  align-items: flex-start;
+  max-width: 100vw;
+  height: 50vh;
+  position: relative;
+  background-color: var(--ion-background-color);
+
+  img {
+    width: 100vw;
+  }
+}
+
+ion-badge {
+  font-size: 2rem;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+.info {
+  @include highlight-info;
+  padding-bottom: 30px;
+}
+
+@media (orientation: landscape) {
+  swiper-slide {
+    height: 75vh;
+  }
+
+  .info {
+    height: 60vh;
+  }
+}

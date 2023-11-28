@@ -1,0 +1,20 @@
+:host {
+  display: block;
+  position: relative;
+}
+
+.info {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+ion-badge {
+  position: absolute;
+  top: -5px;
+  right: 5px;
+}
+
+img {
+  width: 100%;
+}

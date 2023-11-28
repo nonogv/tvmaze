@@ -1,0 +1,27 @@
+@mixin highlight-info {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-end;
+  color: var(--ion-text-color);
+  position: absolute;
+  padding: 0 20px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 30vh;
+  text-shadow: 0 0 3px var(--ion-background-color);
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(var(--ion-background-color-rgb), .75) 50%,
+    var(--ion-background-color) 75%,
+  );
+
+  h3, h5 {
+    margin: 0;
+    line-height: 1.3;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
